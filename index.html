@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pare o Bullying - Informação e Apoio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">🛡️</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">Pare o Bullying</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="text-gray-600 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="#tipos" class="text-gray-600 hover:text-blue-600 transition-colors">Tipos</a>
+                    <a href="#sinais" class="text-gray-600 hover:text-blue-600 transition-colors">Sinais</a>
+                    <a href="#ajuda" class="text-gray-600 hover:text-blue-600 transition-colors">Como Ajudar</a>
+                    <a href="#recursos" class="text-gray-600 hover:text-blue-600 transition-colors">Recursos</a>
+                </div>
+                <button id="menuBtn" class="md:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2">
+                <a href="#inicio" class="block text-gray-600 hover:text-blue-600 py-2">Início</a>
+                <a href="#tipos" class="block text-gray-600 hover:text-blue-600 py-2">Tipos</a>
+                <a href="#sinais" class="block text-gray-600 hover:text-blue-600 py-2">Sinais</a>
+                <a href="#ajuda" class="block text-gray-600 hover:text-blue-600 py-2">Como Ajudar</a>
+                <a href="#recursos" class="block text-gray-600 hover:text-blue-600 py-2">Recursos</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-5xl font-bold mb-6">Juntos Contra o Bullying</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Informação, apoio e recursos para criar ambientes seguros e respeitosos para todos. 
+                    Ninguém merece sofrer bullying.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('ajuda')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Preciso de Ajuda
+                    </button>
+                    <button onclick="scrollToSection('tipos')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Bullying -->
+    <section id="tipos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Tipos de Bullying</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Reconhecer os diferentes tipos de bullying é o primeiro passo para combatê-lo
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-red-50 p-6 rounded-xl border border-red-100">
+                    <div class="text-4xl mb-4">👊</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Físico</h4>
+                    <p class="text-gray-600">Agressões físicas, empurrões, socos, chutes e destruição de pertences.</p>
+                </div>
+                <div class="card-hover bg-blue-50 p-6 rounded-xl border border-blue-100">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Verbal</h4>
+                    <p class="text-gray-600">Insultos, apelidos ofensivos, ameaças e humilhações verbais.</p>
+                </div>
+                <div class="card-hover bg-purple-50 p-6 rounded-xl border border-purple-100">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Social</h4>
+                    <p class="text-gray-600">Exclusão, isolamento, espalhar rumores e prejudicar relacionamentos.</p>
+                </div>
+                <div class="card-hover bg-green-50 p-6 rounded-xl border border-green-100">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Cyberbullying</h4>
+                    <p class="text-gray-600">Assédio online através de redes sociais, mensagens e plataformas digitais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sinais de Alerta -->
+    <section id="sinais" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Sinais de Alerta</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Fique atento a estes sinais que podem indicar que alguém está sofrendo bullying
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-red-600 text-sm">⚠️</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Mudanças Comportamentais</h4>
+                            <p class="text-gray-600">Isolamento, tristeza, ansiedade ou mudanças súbitas de humor.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-red-600 text-sm">📚</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Problemas Escolares</h4>
+                            <p class="text-gray-600">Queda no rendimento, faltas frequentes ou relutância em ir à escola.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-red-600 text-sm">🏥</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Sintomas Físicos</h4>
+                            <p class="text-gray-600">Dores de cabeça, problemas de sono, perda de apetite ou machucados inexplicáveis.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span class="text-red-600 text-sm">👫</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Problemas Sociais</h4>
+                            <p class="text-gray-600">Perda de amigos, evitar atividades sociais ou medo de usar tecnologia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🤗</div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">Você Não Está Sozinho</h4>
+                        <p class="text-gray-600 mb-6">
+                            Se você reconhece estes sinais em si mesmo ou em alguém próximo, 
+                            saiba que há ajuda disponível e que a situação pode melhorar.
+                        </p>
+                        <button onclick="showSupportModal()" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+                            Buscar Apoio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Ajudar -->
+    <section id="ajuda" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Como Você Pode Ajudar</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Todos têm um papel importante na prevenção e combate ao bullying
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">👂</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Escute e Apoie</h4>
+                    <p class="text-gray-600">
+                        Ofereça um ouvido atento e apoio emocional. Acredite na pessoa e 
+                        valide seus sentimentos sem julgamentos.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🗣️</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Denuncie</h4>
+                    <p class="text-gray-600">
+                        Reporte situações de bullying para autoridades competentes, 
+                        escola ou responsáveis. Não ignore o problema.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🤝</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Seja um Aliado</h4>
+                    <p class="text-gray-600">
+                        Intervenha de forma segura quando presenciar bullying. 
+                        Inclua pessoas isoladas e promova a gentileza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos e Contatos -->
+    <section id="recursos" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Recursos de Apoio</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Canais de ajuda e informações importantes para quem precisa de suporte
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-4">📞</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Disque 100</h4>
+                    <p class="text-gray-600 mb-4">Canal nacional de denúncia de violações de direitos humanos</p>
+                    <p class="text-blue-600 font-semibold">Ligação gratuita 24h</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-4">🏫</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Escola</h4>
+                    <p class="text-gray-600 mb-4">Procure a coordenação, direção ou psicólogo escolar</p>
+                    <p class="text-blue-600 font-semibold">Primeiro passo importante</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-3xl mb-4">👨‍⚕️</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Apoio Psicológico</h4>
+                    <p class="text-gray-600 mb-4">Busque ajuda profissional para lidar com os impactos emocionais</p>
+                    <p class="text-blue-600 font-semibold">Cuidado essencial</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Emergência</h4>
+                    <p class="text-gray-600 mb-6">
+                        Em situações de risco imediato ou violência física, procure ajuda imediatamente:
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="bg-red-100 px-6 py-3 rounded-full">
+                            <span class="text-red-600 font-bold">Polícia: 190</span>
+                        </div>
+                        <div class="bg-red-100 px-6 py-3 rounded-full">
+                            <span class="text-red-600 font-bold">SAMU: 192</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">🛡️</span>
+                    </div>
+                    <h1 class="text-2xl font-bold">Pare o Bullying</h1>
+                </div>
+                <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+                    Juntos podemos criar um mundo mais gentil e respeitoso. 
+                    Cada ação conta na luta contra o bullying.
+                </p>
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-500">
+                        © 2024 Pare o Bullying. Feito com ❤️ para promover respeito e gentileza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Apoio -->
+    <div id="supportModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center">
+                <div class="text-4xl mb-4">💙</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Você é Importante</h3>
+                <p class="text-gray-600 mb-6">
+                    Lembre-se: o bullying não é culpa sua. Você merece ser tratado com respeito e dignidade. 
+                    Buscar ajuda é um ato de coragem.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <p class="text-sm text-gray-500">Recursos imediatos:</p>
+                    <div class="bg-blue-50 p-3 rounded-lg">
+                        <p class="text-blue-800 font-semibold">Disque 100 - Gratuito 24h</p>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-lg">
+                        <p class="text-green-800 font-semibold">Converse com um adulto de confiança</p>
+                    </div>
+                </div>
+                <button onclick="closeSupportModal()" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors w-full">
+                    Entendi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu mobile
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll suave para seções
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Fechar menu mobile se estiver aberto
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Modal de apoio
+        function showSupportModal() {
+            document.getElementById('supportModal').classList.remove('hidden');
+            document.getElementById('supportModal').classList.add('flex');
+        }
+
+        function closeSupportModal() {
+            document.getElementById('supportModal').classList.add('hidden');
+            document.getElementById('supportModal').classList.remove('flex');
+        }
+
+        // Fechar modal clicando fora
+        document.getElementById('supportModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSupportModal();
+            }
+        });
+
+        // Animações de entrada
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animação
+        document.querySelectorAll('.card-hover, .grid > div').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98425bf04146cae6',t:'MTc1ODcxNzcxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
